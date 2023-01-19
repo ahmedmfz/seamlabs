@@ -3,6 +3,7 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -36,6 +37,7 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'date_of_birth' => 'date',
     ];
     
     /**
@@ -46,6 +48,12 @@ class User extends Authenticatable
     */
     public function setPasswordAttribute($value)
     {
-    $this->attributes['password'] = bcrypt($value);
+        $this->attributes['password'] = bcrypt($value);
     }
+
+    public function getDateOfBirthAttribute($key)
+    {
+        return (new Carbon($key))->format('Y-m-d');
+    }
+    
 }

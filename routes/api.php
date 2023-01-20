@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Api\Auth\LoginController;
 use App\Http\Controllers\Api\Auth\RegisterController;
+use App\Http\Controllers\Api\ProblemCharController;
+use App\Http\Controllers\Api\ProblemNumberController;
 use App\Http\Controllers\Api\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,6 +19,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 // part one in task
+Route::get('getChars' , [ProblemCharController::class , 'getIndexOfChars']);
+Route::get('getResultOfNumbers' , [ProblemNumberController::class , 'getResultOfNumbers']);
 
 
 // part two in task

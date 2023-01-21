@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Api\Problem\CharRequest;
 use App\Http\Requests\Api\Problem\NumberRequest;
 
 class ProblemNumberController extends Controller

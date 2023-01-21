@@ -8,7 +8,6 @@ use App\Http\Requests\Api\User\UpdateRequest;
 use App\Http\Resources\User\UserCollection;
 use App\Http\Resources\User\UserResource;
 use App\Models\User;
-use Illuminate\Http\Request;
 
 class UserController extends ApiController
 {

@@ -8,17 +8,17 @@ use App\Http\Requests\Api\Problem\CharRequest;
 class ProblemCharController extends Controller
 {
 
-    public static function strChar($i)
+    public static function chars($n)
     {
-        return $i < 0
+        return $n < 0
             ? "" 
-            : self::strChar(((int)($i / 26)) -1) . chr((65 + $i % 26));
+            : self::chars(((int)($n / 26)) -1) . chr((65 + $n % 26));
     }
 
     public function getIndexOfChars(CharRequest $charRequest){
        for ($i = 0; $i < 27 * 27 * 27 ; $i++)
         {
-            if($charRequest->input_string == self::strChar($i)){
+            if($charRequest->input_string == self::chars($i)){
                 echo 'OUTPUT : ' .  $i + 1;
                 break;
             }
